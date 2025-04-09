@@ -1,0 +1,79 @@
+TASK#01
+#include <iostream>
+using namespace std;
+
+int main() {
+    int size;
+
+    cout << "Enter the number of elements: ";
+    cin >> size;
+
+    // Dynamically allocate memory for the array
+    int* arr = new int[size];
+
+    // Input elements
+    cout << "Enter " << size << " integers:\n";
+    for (int i = 0; i < size; i++) {
+        cin >> arr[i];
+    }
+
+    int evenCount = 0, oddCount = 0;
+
+    // Count even and odd numbers
+    for (int i = 0; i < size; i++) {
+        if (arr[i] % 2 == 0)
+            evenCount++;
+        else
+            oddCount++;
+    }
+
+    // Display the result
+    cout << "\nEven numbers: " << evenCount << endl;
+    cout << "Odd numbers: " << oddCount << endl;
+
+    // Free the dynamically allocated memory
+    delete[] arr;
+
+    return 0;
+}
+
+TASK#02
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int size;
+
+    cout << "Enter the number of elements: ";
+    cin >> size;
+
+    // Dynamically allocate memory
+    int* arr = new int[size];
+
+    // Input elements
+    cout << "Enter " << size << " integers:\n";
+    for (int i = 0; i < size; i++) {
+        cin >> arr[i];
+    }
+
+    int max = arr[0];
+    int min = arr[0];
+
+    // Find max and min
+    for (int i = 1; i < size; i++) {
+        if (arr[i] > max)
+            max = arr[i];
+        if (arr[i] < min)
+            min = arr[i];
+    }
+
+    // Output the results
+    cout << "\nMaximum value: " << max << endl;
+    cout << "Minimum value: " << min << endl;
+
+    // Free allocated memory
+    delete[] arr;
+
+    return 0;
+}
